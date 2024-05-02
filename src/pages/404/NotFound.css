@@ -1,0 +1,26 @@
+.notfound-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #508114;
+  color: white;
+}
+
+.notfound-container h1 {
+  font-size: 50px;
+}
+
+.notfound-container h1 span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+}
+
+.notfound-container h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}

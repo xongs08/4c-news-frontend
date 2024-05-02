@@ -1,0 +1,27 @@
+.article-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.article-container article h1 {
+  font-family: Helvetica, sans-serif;
+}
+
+.article-container article p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.article-container article #author:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#article-like:hover {
+  color: blue;
+}
+
+@media (min-width: 800px) {
+  .article-container article p {
+    font-size: 20px;
+  }
+}
