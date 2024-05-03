@@ -1,5 +1,5 @@
 # 4C NEWS
-### Live service:
+### Live application:
 https://funny-basbousa-d3ebdf.netlify.app
 
 ## About this project
