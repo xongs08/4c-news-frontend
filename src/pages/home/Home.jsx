@@ -9,15 +9,13 @@ export default function Home() {
   let { articleId } = useParams()
 
   if (articleId) {
-    const [article, setArticle] = useState({})
-
-    console.log(articleId)
+    const [article, setArticle] = useState(null) // Inicializa com null
 
     useEffect(() => {
       fetch(`https://api.4cnews.fun/article/${articleId}`)
         .then(resp => resp.json())
         .then(data => setArticle(data))
-    }, [])
+    }, [articleId]) // Adiciona articleId como uma dependência do useEffect
 
     return (
       article
@@ -27,52 +25,30 @@ export default function Home() {
             <Header />
           </header>
           <main>
-            <Article article={article} /> 
+            <Article key={article.id} article={article} /> 
           </main>
         </div>
       )
       : <SpinnerSVG width={64} />  
     )
-  }
-  
-  const [articles, setArticles] = useState({})
+  } else {
+    const [articles, setArticles] = useState([])
 
-  useEffect(() => {
-    fetch(`https://api.4cnews.fun/articles/loadall/${import.meta.env.VITE_SECRET}`)
-      .then(resp => resp.json())
-      .then(data => setArticles(data))
-  }, [])
+    useEffect(() => {
+      fetch(`https://api.4cnews.fun/articles/loadall/${import.meta.env.VITE_SECRET}`)
+        .then(resp => resp.json())
+        .then(data => setArticles(data))
+    }, [])
 
-  const findArticleWithMaxViews = () => {
-    if (!Array.isArray(articles) || articles.length === 0) return null
-
-    let maxViews = -1
-    let articleWithMaxViews = null
-
-    articles.forEach(article => {
-      if (article.views > maxViews) {
-        maxViews = article.views
-        articleWithMaxViews = article
-      }
-    })
-  
-    return articleWithMaxViews
-  }
-  
-  const mostViewedArticle = findArticleWithMaxViews()
-
-  return (
-    mostViewedArticle === null
-    ? <SpinnerSVG width={64} />
-    : (
+    return (
       <div className="home-content">
         <header>
           <Header />
         </header>
         <main>
-          {articles.map(article => (<Article article={article} />))}
+          {articles.map(article => <Article key={article.id} article={article} />)}
         </main>
       </div>
     )
-  )
+  }
 }

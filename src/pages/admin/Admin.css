@@ -1,0 +1,60 @@
+/* 403 STYLES */
+.admin-403-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #508114;
+  color: white;
+}
+
+.admin-403-content h1 {
+  font-size: 50px;
+}
+
+.admin-403-content h1 span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+}
+
+.admin-403-content h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+/* MAIN */
+.admin-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-content form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.admin-content form .questions {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.admin-content form .questions label {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.admin-content form .questions label input {
+  padding: 10px;
+}
